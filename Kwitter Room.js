@@ -20,7 +20,7 @@ function addRoom(){
         purpose: "Adding Room Name"
   });
   localStorage.setItem("room_name", room_name);
-  window.location = "kwitter_page.html";
+  window.location = "Kwitter Page.html";
 }
 
 function getData() {firebase.database().ref("/").on('value', function(snapshot) {document.getElementById("output").innerHTML = "";snapshot.forEach(function(childSnapshot) {childKey = childSnapshot.key;
@@ -33,10 +33,11 @@ function getData() {firebase.database().ref("/").on('value', function(snapshot) 
 });});}
 getData();
 
-function redirectToRoomName(name){
-  console.log(name);
-  localStorage.setItem("room_name", name);
+function redirectToRoomName(username){
+  console.log(username);
+  localStorage.setItem("room_name", username);
   window.location = "Kwitter Page.html";
+}
 
 function logout(){
   localStorage.removeItem("user_name");
